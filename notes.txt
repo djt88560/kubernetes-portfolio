@@ -1,0 +1,11 @@
+We are mounting the portfolio html file using a config map.
+There were issues with mounting the file using its absolute file path. it wasnt being recognised
+leaving the /usr/share/nginx/html directory empty in the pod, causing a 403 forbidden error.
+
+The config map loads in the contents of my portfolio file directly. So rather than specifying a file path,
+the deployment just has to look inside the configmap for my portfolio.
+
+I must update the configmap whenever I update the portfolio. Do this with:
+
+$ kubectl create configmap frontend-config --from-file=port
+folio/index.html --dry-run=client -o yaml > frontend-config.yml
