@@ -20,10 +20,15 @@ spec:
         volumeMounts:
           - mountPath: /usr/share/nginx/html
             name: webpage
+          - mountPath: /etc/nginx/conf.d
+            name: config
       volumes:
         - name: webpage
           configMap:
-            name: frontend-config
+            name: webpage
+        - name: config
+          configMap:
+            name: config
 ---
 apiVersion: v1
 kind: Service

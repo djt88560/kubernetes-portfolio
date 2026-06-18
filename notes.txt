@@ -1,11 +1,26 @@
-We are mounting the portfolio html file using a config map.
+We are mounting the portfolio html file and the default config using config maps.
 There were issues with mounting the file using its absolute file path. it wasnt being recognised
 leaving the /usr/share/nginx/html directory empty in the pod, causing a 403 forbidden error.
 
 The config map loads in the contents of my portfolio file directly. So rather than specifying a file path,
-the deployment just has to look inside the configmap for my portfolio.
+the deployment just has to look inside the configmap for my portfolio. Similarly for the default config file.
 
-I must update the configmap whenever I update the portfolio. Do this with:
+I must update the configmaps whenever I update the portfolio. Do this with:
 
-$ kubectl create configmap frontend-config --from-file=port
-folio/index.html --dry-run=client -o yaml > frontend-config.yml
+$ kubectl create configmap config --from-file=Frontend/default.conf --dry-run=client -o yaml > ConfigMaps/frontend-default-config.yml
+
+$ kubectl create configmap webpage --from-file=Frontend/index.html --dry-run=client -o yaml > ConfigMaps/frontend-index-config.yml
+
+18/06/2026 Frontend talks to backend
+We now have the front end talking to the backend
+The frontend is exposed outside the cluster via a NodePort service. We then run $ minikube service <frontend_service_name> to create a port forwarding
+to the front end.
+The backend is exposed within the cluster via ClusterIP. 
+The frontend is connected to the backend using a proxy. when the "/api" url is called from the front end, this is forwarded to the backend service on port 8000,
+where the backend pod listens. We can see this configured in Frontend/default.conf. Then in the index.html, clicking the "qualifications"
+button is coded to trigger the url "/api/qualifications" which is forwarded to http://<backend_service>:8000/qualifications. 
+This triggers the get request "qualifications" which (currently) returns some data about my grades
+
+## Helpful troubleshooting tips
+use (for e.g) kubectl port-forward svc/backend-service 9000:8000 to see the backend in your browser on the fly
+use kubectl exec -it <nginx pod> and look in the relevant directories to check things are mounted correctly

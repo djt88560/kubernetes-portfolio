@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>A simple HTML document</title>
+</head>
+<body>
+    <p>A template for my portfolio</p>
+    
+    <button onclick="callApi()">Get Qualifications</button>
+
+    <script>
+    async function callApi() {
+        const res = await fetch("/api/qualifications");
+        const data = await res.json();
+        alert(JSON.stringify(data));
+    }
+    </script>
+
+</body>
+</html>
