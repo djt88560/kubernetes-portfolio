@@ -24,3 +24,19 @@ This triggers the get request "qualifications" which (currently) returns some da
 ## Helpful troubleshooting tips
 use (for e.g) kubectl port-forward svc/backend-service 9000:8000 to see the backend in your browser on the fly
 use kubectl exec -it <nginx pod> and look in the relevant directories to check things are mounted correctly
+
+
+
+
+
+
+## Creating an ingress
+I have created an ingress - issues&pitfalls include
+- make sure to specify the correct ingressClassName
+- use kubectl run test --rm -it --image=curlimages/curl -- sh to test the ingress routing by sending curl commands
+- port forward the ingress-nginx-controller service to interact with it: kubectl port-forward svc/ingress-nginx-controller 8080:80 -n ingress-nginx
+- now that we are implementing ingress we dont need to expose the frontend with a NodePort service
+
+## Understanding the ingress
+Ingress class - specifies which controller should be used to implement the rules defined in the ingress
+Ingress path types. Currently we are using prefix rather than exact but more care needs to be taken in making the final decision
