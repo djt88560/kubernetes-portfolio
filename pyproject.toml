@@ -8,5 +8,6 @@ authors = [
 requires-python = ">=3.11"
 dependencies = [
   "fastapi[standard-no-fastapi-cloud-cli]==0.136.1",
-  "uvicorn[standard]"
+  "uvicorn[standard]",
+  "psycopg2-binary==2.9.12"
 ]

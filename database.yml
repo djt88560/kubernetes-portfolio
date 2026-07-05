@@ -1,0 +1,50 @@
+# Currently in progress - not yet ready to be deploy
+
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: database-statefulset
+  labels: 
+    app: database
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: database
+  template:
+    metadata:
+      labels:
+        app: database
+    spec:
+      containers:
+      - name: database
+        image: postgres:latest
+        ports:
+        - containerPort: 5432
+        volumeMounts:
+        - mountPath: /var/lib/postgresql
+          name: pvc-volume
+        env:
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: db-secret
+              key: db-password
+      volumes:
+      - name: pvc-volume
+        persistentVolumeClaim:
+          claimName: db-pvc
+---
+
+apiVersion: v1
+kind: Service # service type defaults to clusterIP
+metadata:
+  name: database-service
+spec: 
+  selector:
+    app: database
+  ports:
+    - protocol: TCP
+      port: 5432
+      targetPort: 5432
+

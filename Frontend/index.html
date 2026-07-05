@@ -6,11 +6,11 @@
 <body>
     <p>A template for my portfolio</p>
     
-    <button onclick="callApi()">Get Qualifications</button>
+    <button onclick="callApi()">query</button>
 
     <script>
     async function callApi() {
-        const res = await fetch("/api/qualifications");
+        const res = await fetch("/api/query");
         const data = await res.json();
         alert(JSON.stringify(data));
     }

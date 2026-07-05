@@ -40,3 +40,4 @@ I have created an ingress - issues&pitfalls include
 ## Understanding the ingress
 Ingress class - specifies which controller should be used to implement the rules defined in the ingress
 Ingress path types. Currently we are using prefix rather than exact but more care needs to be taken in making the final decision
+The ingress annotation I have included
