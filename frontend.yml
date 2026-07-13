@@ -22,6 +22,19 @@ spec:
             name: webpage
           - mountPath: /etc/nginx/conf.d
             name: config
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 10
+          periodSeconds: 5
+          timeoutSeconds: 3
+          failureThreshold: 3
+
       volumes:
         - name: webpage
           configMap:

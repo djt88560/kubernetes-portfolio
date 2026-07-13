@@ -10,6 +10,10 @@ POSTGRES_HOST = os.getenv("db_host")
 
 logging.basicConfig(level=logging.INFO)
 
+@app.get("/healthcheck")
+def healthcheck():
+    """Basic health check endpoint, to verify this service is online."""
+    return {"health_check": "OK"} 
 
 @app.get("/query")
 def query():

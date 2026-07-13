@@ -41,3 +41,7 @@ I have created an ingress - issues&pitfalls include
 Ingress class - specifies which controller should be used to implement the rules defined in the ingress
 Ingress path types. Currently we are using prefix rather than exact but more care needs to be taken in making the final decision
 The ingress annotation I have included
+
+
+## A few gotchas
+when you build a new backend image, make sure to load it into the cluster with "minikube -p kubernetes-portfolio load <IMAGE_NAME>"
