@@ -44,4 +44,13 @@ The ingress annotation I have included
 
 
 ## A few gotchas
-when you build a new backend image, make sure to load it into the cluster with "minikube -p kubernetes-portfolio load <IMAGE_NAME>"
+when you build a new backend image, make sure to load it into the cluster with "minikube -p kubernetes-portfolio image load <IMAGE_NAME>"
+
+## Network policies
+Added network policies to enforce connections and port numebrs between pods
+Important - I added a policy which default-denies all ingress/egress on all pods, then i made policies to make exceptions
+A lot of k8s functionality relies of networking between pods. A good example of the core-dns pod. The pods need this to be able to translate service names
+into the IPs. So this was causing an issue before i created a policy to allow connections to the core-dns pod. Be careful in the future for more like this.
+
+I had to restart the cluster with a CNI for the network policies to activate. The yml files were happily accepted before,
+but had no effect. Use minikube start --cni=calico
