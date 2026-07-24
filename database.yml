@@ -30,6 +30,11 @@ spec:
             secretKeyRef:
               name: db-secret
               key: db-password
+        - name: POSTGRES_USER
+          valueFrom:
+            secretKeyRef:
+              name: db-secret
+              key: db-user
       volumes:
       - name: pvc-volume
         persistentVolumeClaim:

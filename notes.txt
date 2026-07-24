@@ -54,3 +54,7 @@ into the IPs. So this was causing an issue before i created a policy to allow co
 
 I had to restart the cluster with a CNI for the network policies to activate. The yml files were happily accepted before,
 but had no effect. Use minikube start --cni=calico
+
+## database gotchas
+When migrating to a different minikube profile to allow for the addition of a cni, I forgot that I manually worte the data to the database
+and created the profile "djt88560". This caused an error where the profile didnt exist. We need to remember this in future.
