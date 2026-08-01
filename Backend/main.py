@@ -34,7 +34,6 @@ def query():
 
     return rows
 
-
 @app.get("/api/A-Levels")
 def A_Levels():
 

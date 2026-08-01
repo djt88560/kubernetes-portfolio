@@ -75,3 +75,10 @@ and serves the homepage only.
 
 Solution 1: Split the ingress into 2. One for the front end, and one for the backend with the specific rule enforced
 Solution2: scrap the rule and instead configure the backend to consume endpoints beginning with "/api"
+
+
+## ISSUE WITH POSTGRES
+
+When creating a new table, make sure to grant permissions to djt88560 to select data from the table. this is how data is fetched by the backend.
+A good way to troubleshoot this is to portforward the backend service, then do curl commands like curl http://localhost:port/api/query and 
+check the pod logs as it happens
