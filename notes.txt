@@ -11,6 +11,10 @@ $ kubectl create configmap config --from-file=Frontend/default.conf --dry-run=cl
 
 $ kubectl create configmap webpage --from-file=Frontend/index.html --dry-run=client -o yaml > ConfigMaps/frontend-index-config.yml
 
+NOW (01/08/2026) as we have more html files we need to include these too for the frontend-index-config. Do this with (example for 2 files):
+
+$ kubectl create configmap webpage --from-file=Frontend/index.html --from-file=Frontend/qualifications.html --dry-run=client -o yaml > ConfigMaps/frontend-index-config.yml
+
 18/06/2026 Frontend talks to backend
 We now have the front end talking to the backend
 The frontend is exposed outside the cluster via a NodePort service. We then run $ minikube service <frontend_service_name> to create a port forwarding
@@ -58,3 +62,16 @@ but had no effect. Use minikube start --cni=calico
 ## database gotchas
 When migrating to a different minikube profile to allow for the addition of a cni, I forgot that I manually worte the data to the database
 and created the profile "djt88560". This caused an error where the profile didnt exist. We need to remember this in future.
+
+## Issue when developing the front end using the ingress controller
+When clicking on my "qualifications" button on my index.html, it routed me to /qualifications.html which is what I wanted. However, it was displaying
+the contents of index.html. I ensured that qualifications.html existed in the container by exec-ing into the container. At this point I was confused.
+It turns out that becuase I was port-forwarding via the ingress controller, rules defined in the ingress were superseding he rules defined by nginx.
+The ingress is making any URL, even something like /doesnt-exist.html return /index.html. It wastemporarily resolved by portforwarding to the nginx
+service rather than the ingress controller, but in the long term i need to change the ingress rules to by able to allow nginx to serve the files properly.
+The ingress annotation was originally supposed to be applied only to requests which would be sent to the backend. But now that i am developing my frontend
+and adding more webpages, the rule is having an unwanted impact. For example, if I request "/qualifications.html", the rule rewrites the request to"/"
+and serves the homepage only.
+
+Solution 1: Split the ingress into 2. One for the front end, and one for the backend with the specific rule enforced
+Solution2: scrap the rule and instead configure the backend to consume endpoints beginning with "/api"

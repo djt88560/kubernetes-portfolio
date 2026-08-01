@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    /* Method 1: Absolute Positioning */
+    .absolute-btn {
+        position: absolute; /* Position relative to nearest positioned ancestor */
+        top: 50px;          /* Distance from top */
+        left: 100px;        /* Distance from left */
+        padding: 48px 40px;
+        width: 100px;
+        height: 100px;
+
+        text-align: center; /* Horizontal centering */
+        display: flex;
+        align-items: center; /* Vertical centering */
+        justify-content: center;
+
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+</style>
+
+<head>
+    <title>Dan Jackson-Thomas Porfolio</title>
+</head>
+<body>
+    
+    <p>My Qualifications and Awards</p>
+    <img src="images/Dan_Jackson_Thomas.jpg" alt="A description of my photo" width="200" height="202px">
+   
+    <button class="absolute-btn" style="top:50px; left:208px;" onclick="callALevels()">A-levels</button>
+
+    <script>
+    async function callALevels() {
+        const res = await fetch("/api/A-Levels");
+        const data = await res.json();
+        alert(JSON.stringify(data));
+    }
+    </script>
+
+</body>
+</html>

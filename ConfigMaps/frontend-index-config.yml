@@ -1,10 +1,37 @@
 apiVersion: v1
 data:
-  index.html: "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <title>A simple
-    HTML document</title>\r\n</head>\r\n<body>\r\n    <p>A template for my portfolio</p>\r\n
-    \   \r\n    <button onclick=\"callApi()\">query</button>\r\n\r\n    <script>\r\n
-    \   async function callApi() {\r\n        const res = await fetch(\"/api/query\");\r\n
-    \       const data = await res.json();\r\n        alert(JSON.stringify(data));\r\n
+  index.html: "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n    \r\n<style>\r\n    /*
+    Method 1: Absolute Positioning */\r\n    .absolute-btn {\r\n        position:
+    absolute; /* Position relative to nearest positioned ancestor */\r\n        top:
+    50px;          /* Distance from top */\r\n        left: 100px;        /* Distance
+    from left */\r\n        padding: 48px 40px;\r\n        width: 100px;\r\n        height:
+    100px;\r\n\r\n        text-align: center; /* Horizontal centering */\r\n        display:
+    flex;\r\n        align-items: center; /* Vertical centering */\r\n        justify-content:
+    center;\r\n\r\n        background-color: #007BFF;\r\n        color: white;\r\n
+    \       border: none;\r\n        cursor: pointer;\r\n    }\r\n</style>\r\n\r\n<head>\r\n
+    \   <title>Dan Jackson-Thomas Porfolio</title>\r\n</head>\r\n\r\n<body>\r\n    \r\n
+    \   <p>I'm Dan Jackson-Thomas</p>\r\n    <img src=\"images/Dan_Jackson_Thomas.jpg\"
+    alt=\"A description of my photo\" width=\"200\" height=\"202px\">\r\n    <button
+    class=\"absolute-btn\" style=\"top:50px; left:208px;\" onclick=\"window.location.href='career.html'\">Career</button>\r\n
+    \   <button class=\"absolute-btn\" style=\"top:50px; left:310px;\">Education</button>\r\n
+    \   <button class=\"absolute-btn\" style=\"top:151px; left:208px; padding: 40px;\"
+    onclick=\"window.location.href='qualifications.html'\">Qualifications<br> & Awards</button>\r\n
+    \   <button class=\"absolute-btn\" style=\"top:151px; left:310px;\">Hobbies</button>\r\n\r\n</body>\r\n</html>"
+  qualifications.html: "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<style>\r\n    /*
+    Method 1: Absolute Positioning */\r\n    .absolute-btn {\r\n        position:
+    absolute; /* Position relative to nearest positioned ancestor */\r\n        top:
+    50px;          /* Distance from top */\r\n        left: 100px;        /* Distance
+    from left */\r\n        padding: 48px 40px;\r\n        width: 100px;\r\n        height:
+    100px;\r\n\r\n        text-align: center; /* Horizontal centering */\r\n        display:
+    flex;\r\n        align-items: center; /* Vertical centering */\r\n        justify-content:
+    center;\r\n\r\n        background-color: #007BFF;\r\n        color: white;\r\n
+    \       border: none;\r\n        cursor: pointer;\r\n    }\r\n</style>\r\n\r\n<head>\r\n
+    \   <title>Dan Jackson-Thomas Porfolio</title>\r\n</head>\r\n<body>\r\n    \r\n
+    \   <p>My Qualifications and Awards</p>\r\n    <img src=\"images/Dan_Jackson_Thomas.jpg\"
+    alt=\"A description of my photo\" width=\"200\" height=\"202px\">\r\n   \r\n    <button
+    class=\"absolute-btn\" style=\"top:50px; left:208px;\" onclick=\"callALevels()\">A-levels</button>\r\n\r\n
+    \   <script>\r\n    async function callALevels() {\r\n        const res = await
+    fetch(\"/api/A-Levels\");\r\n        const data = await res.json();\r\n        alert(JSON.stringify(data));\r\n
     \   }\r\n    </script>\r\n\r\n</body>\r\n</html>"
 kind: ConfigMap
 metadata:

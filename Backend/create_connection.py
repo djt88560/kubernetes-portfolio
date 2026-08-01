@@ -34,3 +34,15 @@ def query_data(conn, table_name, limit=10):
     except Exception as e:
         print(f"Query error: {e}")
         return []
+
+def query_a_levels(conn):
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT grades, description FROM qualifications WHERE id=1;")
+            rows = cur.fetchall()
+            print(rows)
+            return rows
+
+    except Exception as e:
+        print(f"Query error: {e}")
+        return []
