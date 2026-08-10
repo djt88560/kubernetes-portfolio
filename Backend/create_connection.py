@@ -39,9 +39,13 @@ def query_a_levels(conn):
     try:
         with conn.cursor() as cur:
             cur.execute("SELECT grades, description FROM qualifications WHERE id=1;")
-            rows = cur.fetchall()
-            print(rows)
-            return rows
+            row = cur.fetchone()
+            print(row)
+            return {
+                "title": "A-Levels",
+                "grades": row[0],
+                "description": row[1]
+            }
 
     except Exception as e:
         print(f"Query error: {e}")

@@ -22,6 +22,8 @@ spec:
             name: webpage
           - mountPath: /etc/nginx/conf.d
             name: config
+          - mountPath: /usr/share/nginx/html/images
+            name: images
         readinessProbe:
           httpGet:
             path: /
@@ -48,9 +50,23 @@ spec:
         - name: webpage
           configMap:
             name: webpage
+            items:
+            - key: index.html
+              path: index.html
+            - key: qualifications.html
+              path: qualifications.html
+            - key: styles.css
+              path: styles.css
         - name: config
           configMap:
             name: config
+        - name: images
+          configMap:
+            name: webpage
+            items:
+            - key: Dan_Jackson_Thomas.jpg
+              path: Dan_Jackson_Thomas.jpg
+              
 ---
 apiVersion: v1
 kind: Service

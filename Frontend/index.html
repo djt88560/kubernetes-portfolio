@@ -1,40 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-<style>
-    /* Method 1: Absolute Positioning */
-    .absolute-btn {
-        position: absolute; /* Position relative to nearest positioned ancestor */
-        top: 50px;          /* Distance from top */
-        left: 100px;        /* Distance from left */
-        padding: 48px 40px;
-        width: 100px;
-        height: 100px;
-
-        text-align: center; /* Horizontal centering */
-        display: flex;
-        align-items: center; /* Vertical centering */
-        justify-content: center;
-
-        background-color: #007BFF;
-        color: white;
-        border: none;
-        cursor: pointer;
-    }
-</style>
 
 <head>
-    <title>Dan Jackson-Thomas Porfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dan Jackson-Thomas | Portfolio</title>
+
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    
-    <p>I'm Dan Jackson-Thomas</p>
-    <img src="images/Dan_Jackson_Thomas.jpg" alt="A description of my photo" width="200" height="202px">
-    <button class="absolute-btn" style="top:50px; left:208px;" onclick="window.location.href='career.html'">Career</button>
-    <button class="absolute-btn" style="top:50px; left:310px;">Education</button>
-    <button class="absolute-btn" style="top:151px; left:208px; padding: 40px;" onclick="window.location.href='qualifications.html'">Qualifications<br> & Awards</button>
-    <button class="absolute-btn" style="top:151px; left:310px;">Hobbies</button>
+
+<!-- Navigation -->
+<header class="navbar">
+
+<div class="navbar-container">
+
+<a href="index.html" class="logo">
+DJT
+</a>
+
+<span class="navbar-name">
+Dan Jackson-Thomas
+</span>
+
+</div>
+
+</header>
+
+
+<main>
+
+<!-- =====================================================
+HERO
+===================================================== -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="hero-text">
+
+<p class="eyebrow">
+WELCOME TO MY PORTFOLIO
+</p>
+
+<h1>
+I'm Dan<br>
+<span>Jackson-Thomas.</span>
+</h1>
+
+<p class="hero-description">
+Welcome to my personal portfolio. This website
+provides an overview of my career, education,
+qualifications, achievements and interests.
+</p>
+
+<p class="hero-description secondary">
+Explore the sections below to find out more
+about my background and the things I have
+achieved throughout my academic and
+professional journey.
+</p>
+
+</div>
+
+
+<div class="hero-image-wrapper">
+
+<div class="image-decoration"></div>
+
+<img
+src="images/Dan_Jackson_Thomas.jpg"
+alt="Dan Jackson-Thomas"
+class="profile-image"
+>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+PORTFOLIO SECTIONS
+===================================================== -->
+
+<section class="portfolio-section">
+
+<div class="section-heading">
+
+<p class="eyebrow">
+EXPLORE
+</p>
+
+<h2>
+My Portfolio
+</h2>
+
+<p>
+Select a section below to find out more about me.
+</p>
+
+</div>
+
+
+<div class="portfolio-grid">
+
+
+<!-- CAREER -->
+
+<a href="career.html" class="portfolio-card">
+
+<div class="card-top">
+
+<span class="card-number">
+01
+</span>
+
+<span class="card-icon">
+💼
+</span>
+
+</div>
+
+<h3>
+Career
+</h3>
+
+<p>
+Discover my professional experience, roles,
+responsibilities and career journey.
+</p>
+
+<span class="card-link">
+Explore Career
+<span>→</span>
+</span>
+
+</a>
+
+
+<!-- EDUCATION -->
+
+<a href="education.html" class="portfolio-card">
+
+<div class="card-top">
+
+<span class="card-number">
+02
+</span>
+
+<span class="card-icon">
+🎓
+</span>
+
+</div>
+
+<h3>
+Education
+</h3>
+
+<p>
+Find out about my academic background,
+studies and educational journey.
+</p>
+
+<span class="card-link">
+Explore Education
+<span>→</span>
+</span>
+
+</a>
+
+
+<!-- QUALIFICATIONS -->
+
+<a href="qualifications.html"
+class="portfolio-card featured">
+
+<div class="card-top">
+
+<span class="card-number">
+03
+</span>
+
+<span class="card-icon">
+🏆
+</span>
+
+</div>
+
+<h3>
+Qualifications &amp; Awards
+</h3>
+
+<p>
+View my examination results, university
+achievements, certifications and awards.
+</p>
+
+<span class="card-link">
+View Qualifications
+<span>→</span>
+</span>
+
+</a>
+
+
+<!-- HOBBIES -->
+
+<a href="hobbies.html" class="portfolio-card">
+
+<div class="card-top">
+
+<span class="card-number">
+04
+</span>
+
+<span class="card-icon">
+⚡
+</span>
+
+</div>
+
+<h3>
+Hobbies
+</h3>
+
+<p>
+Learn more about my interests and the things
+I enjoy outside of work and education.
+</p>
+
+<span class="card-link">
+Explore Hobbies
+<span>→</span>
+</span>
+
+</a>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- Footer -->
+
+<footer>
+
+<span>
+© 2026 Dan Jackson-Thomas
+</span>
+
+<span>
+Personal Portfolio
+</span>
+
+</footer>
 
 </body>
+
 </html>

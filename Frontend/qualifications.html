@@ -1,44 +1,791 @@
 <!DOCTYPE html>
 <html lang="en">
-<style>
-    /* Method 1: Absolute Positioning */
-    .absolute-btn {
-        position: absolute; /* Position relative to nearest positioned ancestor */
-        top: 50px;          /* Distance from top */
-        left: 100px;        /* Distance from left */
-        padding: 48px 40px;
-        width: 100px;
-        height: 100px;
-
-        text-align: center; /* Horizontal centering */
-        display: flex;
-        align-items: center; /* Vertical centering */
-        justify-content: center;
-
-        background-color: #007BFF;
-        color: white;
-        border: none;
-        cursor: pointer;
-    }
-</style>
 
 <head>
-    <title>Dan Jackson-Thomas Porfolio</title>
-</head>
-<body>
-    
-    <p>My Qualifications and Awards</p>
-    <img src="images/Dan_Jackson_Thomas.jpg" alt="A description of my photo" width="200" height="202px">
-   
-    <button class="absolute-btn" style="top:50px; left:208px;" onclick="callALevels()">A-levels</button>
 
-    <script>
-    async function callALevels() {
-        const res = await fetch("/api/A-Levels");
-        const data = await res.json();
-        alert(JSON.stringify(data));
-    }
-    </script>
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+Qualifications & Awards | Dan Jackson-Thomas
+</title>
+
+<link rel="stylesheet" href="styles.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+NAVIGATION
+===================================================== -->
+
+<header class="navbar">
+
+<div class="navbar-container">
+
+<a href="index.html" class="logo">
+DJT
+</a>
+
+<span class="navbar-name">
+Dan Jackson-Thomas
+</span>
+
+<a href="index.html" class="back-button">
+← Back to Portfolio
+</a>
+
+</div>
+
+</header>
+
+
+
+<main>
+
+
+<!-- =====================================================
+PAGE HEADER
+===================================================== -->
+
+<section class="page-header">
+
+<div class="page-header-content">
+
+<p class="eyebrow">
+MY ACHIEVEMENTS
+</p>
+
+<h1>
+Qualifications<br>
+<span>&amp; Awards</span>
+</h1>
+
+<p>
+A collection of my academic qualifications,
+examination results, certifications and
+achievements.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+QUALIFICATIONS
+===================================================== -->
+
+<section class="qualifications-container">
+
+
+<!-- =================================================
+LEFT MENU
+================================================= -->
+
+<aside class="qualification-menu">
+
+
+<p class="menu-title">
+QUALIFICATIONS
+</p>
+
+
+<!-- A LEVELS -->
+
+<button
+class="qualification-button active"
+onclick="loadQualification(
+'A-Levels',
+this
+)"
+>
+
+<span class="qualification-icon">
+🎓
+</span>
+
+<span class="qualification-button-text">
+
+<strong>
+A-Levels
+</strong>
+
+<small>
+Examination Results
+</small>
+
+</span>
+
+<span class="arrow">
+→
+</span>
+
+</button>
+
+
+<!-- GCSE -->
+
+<button
+class="qualification-button"
+onclick="loadQualification(
+'GCSEs',
+this
+)"
+>
+
+<span class="qualification-icon">
+📚
+</span>
+
+<span class="qualification-button-text">
+
+<strong>
+GCSEs
+</strong>
+
+<small>
+School Qualifications
+</small>
+
+</span>
+
+<span class="arrow">
+→
+</span>
+
+</button>
+
+
+<!-- UNIVERSITY -->
+
+<button
+class="qualification-button"
+onclick="loadQualification(
+'University',
+this
+)"
+>
+
+<span class="qualification-icon">
+🏛️
+</span>
+
+<span class="qualification-button-text">
+
+<strong>
+University Results
+</strong>
+
+<small>
+Degree &amp; Modules
+</small>
+
+</span>
+
+<span class="arrow">
+→
+</span>
+
+</button>
+
+
+<div class="menu-divider"></div>
+
+
+<p class="menu-title">
+ADDITIONAL ACHIEVEMENTS
+</p>
+
+
+<!-- CERTIFICATIONS -->
+
+<button
+class="qualification-button"
+onclick="loadQualification(
+'Certifications',
+this
+)"
+>
+
+<span class="qualification-icon">
+📜
+</span>
+
+<span class="qualification-button-text">
+
+<strong>
+Certifications
+</strong>
+
+<small>
+Professional Certifications
+</small>
+
+</span>
+
+<span class="arrow">
+→
+</span>
+
+</button>
+
+
+<!-- AWARDS -->
+
+<button
+class="qualification-button"
+onclick="loadQualification(
+'Awards',
+this
+)"
+>
+
+<span class="qualification-icon">
+🏆
+</span>
+
+<span class="qualification-button-text">
+
+<strong>
+Awards
+</strong>
+
+<small>
+Awards &amp; Achievements
+</small>
+
+</span>
+
+<span class="arrow">
+→
+</span>
+
+</button>
+
+
+</aside>
+
+
+
+<!-- =================================================
+RIGHT CONTENT
+================================================= -->
+
+<section class="qualification-content">
+
+
+<!-- Loading -->
+
+<div
+class="loading"
+id="loading"
+>
+
+Loading information...
+
+</div>
+
+
+
+<!-- =================================================
+RESULT
+================================================= -->
+
+<div
+class="qualification-result"
+id="qualification-result"
+style="display: none;"
+>
+
+
+<div class="result-header">
+
+<div>
+
+<p class="result-category">
+QUALIFICATION
+</p>
+
+<h2 id="qualification-title">
+A-Levels
+</h2>
+
+</div>
+
+
+<div class="result-badge">
+✓
+</div>
+
+</div>
+
+
+<div class="result-divider"></div>
+
+
+
+<!-- RESULTS -->
+
+<div class="grades-section">
+
+<h3>
+Results
+</h3>
+
+<div
+class="grades-grid"
+id="grades-container"
+>
+
+</div>
+
+</div>
+
+
+
+<!-- DESCRIPTION -->
+
+<div class="description-section">
+
+<h3>
+About this qualification
+</h3>
+
+<p id="qualification-description">
+</p>
+
+</div>
+
+
+</div>
+
+
+
+<!-- =================================================
+ERROR
+================================================= -->
+
+<div
+class="error-panel"
+id="error-panel"
+>
+
+<div class="error-icon">
+!
+</div>
+
+<h3>
+Information unavailable
+</h3>
+
+<p id="error-message">
+Unable to load this information.
+</p>
+
+<button
+class="retry-button"
+id="retry-button"
+>
+Try Again
+</button>
+
+</div>
+
+
+</section>
+
+</section>
+
+</main>
+
+
+
+<!-- =====================================================
+FOOTER
+===================================================== -->
+
+<footer>
+
+<span>
+© 2026 Dan Jackson-Thomas
+</span>
+
+<span>
+Personal Portfolio
+</span>
+
+</footer>
+
+
+
+<!-- =====================================================
+JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/*
+* HTML elements
+*/
+
+const loadingPanel =
+document.getElementById("loading");
+
+const resultPanel =
+document.getElementById("qualification-result");
+
+const errorPanel =
+document.getElementById("error-panel");
+
+const titleElement =
+document.getElementById("qualification-title");
+
+const gradesContainer =
+document.getElementById("grades-container");
+
+const descriptionElement =
+document.getElementById(
+"qualification-description"
+);
+
+const errorMessage =
+document.getElementById("error-message");
+
+const retryButton =
+document.getElementById("retry-button");
+
+
+/*
+* Remember the currently selected qualification.
+*/
+
+let currentQualification = "A-Levels";
+
+
+
+/*
+* Load qualification information.
+*/
+
+async function loadQualification(
+qualification,
+clickedButton = null
+) {
+
+currentQualification = qualification;
+
+
+/*
+* Update selected button.
+*/
+
+if (clickedButton) {
+
+document
+.querySelectorAll(
+".qualification-button"
+)
+.forEach(button => {
+
+button.classList.remove("active");
+
+});
+
+clickedButton.classList.add("active");
+}
+
+
+/*
+* Show loading state.
+*/
+
+loadingPanel.style.display = "flex";
+
+resultPanel.style.display = "none";
+
+errorPanel.style.display = "none";
+
+
+try {
+
+
+/*
+* Build API endpoint.
+*
+* A-Levels -> /api/A-Levels
+* GCSEs -> /api/GCSEs
+* etc.
+*/
+
+const endpoint =
+"/api/" +
+encodeURIComponent(
+qualification
+);
+
+
+/*
+* Call backend.
+*/
+
+const response =
+await fetch(endpoint);
+
+
+/*
+* Check HTTP response.
+*/
+
+if (!response.ok) {
+
+throw new Error(
+`Server returned ${response.status}`
+);
+
+}
+
+
+/*
+* Convert response to JSON.
+*/
+
+const data =
+await response.json();
+
+console.log("Received data:", data);
+
+/*
+* Set title.
+*
+* If the backend supplies a title,
+* use it. Otherwise use the selected
+* qualification name.
+*/
+
+titleElement.textContent =
+data.title ||
+qualification;
+
+
+
+/*
+* Set description.
+*/
+
+descriptionElement.textContent =
+data.description ||
+"No description has been provided yet.";
+
+
+
+/*
+* Clear old grades.
+*/
+
+gradesContainer.innerHTML = "";
+
+
+
+/*
+* Your current database stores grades
+* as VARCHAR, so we expect something like:
+*
+* "A,A,B"
+*
+* or:
+*
+* "A, A, B"
+*/
+
+if (data.grades) {
+
+
+const grades =
+String(data.grades)
+.split(",")
+.map(
+grade =>
+grade.trim()
+)
+.filter(
+grade =>
+grade.length > 0
+);
+
+
+/*
+* Create a card for each grade.
+*/
+
+grades.forEach(
+(grade, index) => {
+
+
+const gradeCard =
+document.createElement(
+"div"
+);
+
+gradeCard.className =
+"grade-card";
+
+
+const subject =
+document.createElement(
+"span"
+);
+
+subject.className =
+"subject";
+
+
+/*
+* At the moment your database
+* only stores the grades, not
+* subject names.
+*
+* Therefore we call these
+* Result 1, Result 2, etc.
+*
+* You can change this later
+* if you add subject names.
+*/
+
+subject.textContent =
+`Result ${index + 1}`;
+
+
+const gradeValue =
+document.createElement(
+"strong"
+);
+
+gradeValue.className =
+"grade";
+
+gradeValue.textContent =
+grade;
+
+
+gradeCard.appendChild(
+subject
+);
+
+gradeCard.appendChild(
+gradeValue
+);
+
+
+gradesContainer.appendChild(
+gradeCard
+);
+
+}
+);
+
+
+} else {
+
+
+gradesContainer.innerHTML = `
+<p class="no-data">
+No results have been added yet.
+</p>
+`;
+
+}
+
+
+
+/*
+* Finished loading.
+*/
+
+loadingPanel.style.display =
+"none";
+
+resultPanel.style.display =
+"block";
+
+
+} catch (error) {
+
+
+/*
+* Something went wrong.
+*/
+
+console.error(
+"Qualification error:",
+error
+);
+
+
+loadingPanel.style.display =
+"none";
+
+resultPanel.style.display =
+"none";
+
+errorPanel.style.display =
+"block";
+
+
+errorMessage.textContent =
+"Unable to load " +
+qualification +
+". " +
+error.message;
+
+
+/*
+* Set retry action.
+*/
+
+retryButton.onclick =
+function () {
+
+loadQualification(
+currentQualification
+);
+
+};
+
+}
+
+}
+
+
+
+/*
+* Automatically load A-Levels
+* when the page opens.
+*/
+
+document.addEventListener(
+"DOMContentLoaded",
+function () {
+
+loadQualification(
+"A-Levels"
+);
+
+}
+);
+
+</script>
 
 </body>
+
+
 </html>

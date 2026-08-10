@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: backend:v10
+        image: backend:v11
         ports:
         - containerPort: 8000
         env:
@@ -36,22 +36,23 @@ spec:
           httpGet:
             path: /healthcheck
             port: 8000
-          periodSeconds: 5
+          periodSeconds: 100
+          initialDelaySeconds: 30
         livenessProbe:
           httpGet:
             path: /healthcheck
             port: 8000
-          initialDelaySeconds: 3000
+          initialDelaySeconds: 30
           periodSeconds: 5
           timeoutSeconds: 3
           failureThreshold: 3
         resources:
           requests:
             memory: "80Mi"
-            cpu: "3m"
+            cpu: "100m"
           limits:
             memory: "200Mi"
-            cpu: "10m"
+            cpu: "500m"
 
 ---
 
