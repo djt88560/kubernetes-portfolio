@@ -50,3 +50,70 @@ def query_a_levels(conn):
     except Exception as e:
         print(f"Query error: {e}")
         return []
+
+def query_gcses(conn):
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT grades, description FROM qualifications WHERE id=2;")
+            row = cur.fetchone()
+            print(row)
+            return {
+                "title": "GCSEs",
+                "grades": row[0],
+                "description": row[1]
+            }
+
+    except Exception as e:
+        print(f"Query error: {e}")
+        return []
+
+def query_university(conn):
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT grades, description FROM qualifications WHERE id=3;")
+            row = cur.fetchone()
+            print(row)
+            return {
+                "title": "University",
+                "grades": row[0],
+                "description": row[1]
+            }
+
+    except Exception as e:
+        print(f"Query error: {e}")
+        return []
+
+def query_certifications(conn):
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT grades, description FROM qualifications WHERE id=4;")
+            row = cur.fetchone()
+            print(row)
+            return {
+                "title": "Certifications",
+                "grades": row[0],
+                "description": row[1]
+            }
+
+    except Exception as e:
+        print(f"Query error: {e}")
+        return []
+
+def query_awards(conn):
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT grades, description FROM qualifications WHERE id=5;")
+            row = cur.fetchone()
+            print(row)
+            return {
+                "title": "Awards",
+                "grades": row[0],
+                "description": row[1]
+            }
+
+    except Exception as e:
+        print(f"Query error: {e}")
+        return []
+
+
+

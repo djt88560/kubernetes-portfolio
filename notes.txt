@@ -82,3 +82,7 @@ Solution2: scrap the rule and instead configure the backend to consume endpoints
 When creating a new table, make sure to grant permissions to djt88560 to select data from the table. this is how data is fetched by the backend.
 A good way to troubleshoot this is to portforward the backend service, then do curl commands like curl http://localhost:port/api/query and 
 check the pod logs as it happens
+
+
+Insert data into the postgres table by doing:
+INSERT INTO qualifications (id,title,description,grades) VALUES (3,University,"I worked hard at university, averaging over 80% across my entire degree", "2nd year (Worth 1/7 of my degree) - 82.3% , 3rd year (Worth 3/7 of my degree) - 82.3%, 4th year (worth 3/7 of my degree) - 80.8% with the best perfomance in my year)

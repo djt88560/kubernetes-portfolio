@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: backend:v11
+        image: backend:v13
         ports:
         - containerPort: 8000
         env:
