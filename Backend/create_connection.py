@@ -115,5 +115,23 @@ def query_awards(conn):
         print(f"Query error: {e}")
         return []
 
+def query_rotation(conn, rotation_id):
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                """
+                SELECT title, description FROM career WHERE id= %s
+                """,
+                (rotation_id,)
+                )
+            row = cur.fetchone()
+            print(row)
+            return {
+                "title": row[0],
+                "description": row[1]
+            }
 
+    except Exception as e:
+        print(f"Query error: {e}")
+        return []
 

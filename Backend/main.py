@@ -2,7 +2,7 @@ from fastapi import FastAPI
 import logging
 import os
 from Backend.qualifications import qualifications
-from Backend.create_connection import create_connection, query_data, query_a_levels, query_gcses, query_university, query_certifications, query_awards
+from Backend.create_connection import create_connection, query_data, query_a_levels, query_gcses, query_university, query_certifications, query_awards, query_rotation
 app = FastAPI()
 POSTGRES_PASSWORD = os.getenv("db_password")
 POSTGRES_USER = os.getenv("db_user")
@@ -132,3 +132,60 @@ def Awards():
 
     conn.close()
     return awards
+    
+@app.get("/api/rotation-1")
+def rotation_1():
+
+    conn = create_connection(
+        host="database-service",
+        database="postgres",
+        user=POSTGRES_USER,
+        password=POSTGRES_PASSWORD,
+        port=5432
+    )
+
+    if not conn:
+        return {"error": "Failed to connect"}
+
+    rotation_1 = query_rotation(conn, 1)
+
+    conn.close()
+    return rotation_1
+
+@app.get("/api/rotation-2")
+def rotation_2():
+
+    conn = create_connection(
+        host="database-service",
+        database="postgres",
+        user=POSTGRES_USER,
+        password=POSTGRES_PASSWORD,
+        port=5432
+    )
+
+    if not conn:
+        return {"error": "Failed to connect"}
+
+    rotation_2 = query_rotation(conn, 2)
+
+    conn.close()
+    return rotation_2
+
+@app.get("/api/rotation-3")
+def rotation_3():
+
+    conn = create_connection(
+        host="database-service",
+        database="postgres",
+        user=POSTGRES_USER,
+        password=POSTGRES_PASSWORD,
+        port=5432
+    )
+
+    if not conn:
+        return {"error": "Failed to connect"}
+
+    rotation_3 = query_rotation(conn, 3)
+
+    conn.close()
+    return rotation_3

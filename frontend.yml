@@ -55,6 +55,8 @@ spec:
               path: index.html
             - key: qualifications.html
               path: qualifications.html
+            - key: career.html
+              path: career.html
             - key: styles.css
               path: styles.css
         - name: config
