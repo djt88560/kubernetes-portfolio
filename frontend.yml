@@ -57,6 +57,10 @@ spec:
               path: qualifications.html
             - key: career.html
               path: career.html
+            - key: education.html
+              path: education.html
+            - key: hobbies.html
+              path: hobbies.html
             - key: styles.css
               path: styles.css
         - name: config

@@ -8,7 +8,7 @@ fi
    
 kubectl delete cm webpage || true
 
-kubectl create configmap webpage --from-file=Frontend/index.html --from-file=Frontend/qualifications.html --from-file=Frontend/career.html --from-file=Frontend/styles.css --from-file=Frontend/images/Dan_Jackson_Thomas.jpg --dry-run=client -o yaml > ConfigMaps/frontend-index-config.yml
+kubectl create configmap webpage --from-file=Frontend/index.html --from-file=Frontend/qualifications.html --from-file=Frontend/career.html --from-file=Frontend/hobbies.html --from-file=Frontend/education.html --from-file=Frontend/styles.css --from-file=Frontend/images/Dan_Jackson_Thomas.jpg --dry-run=client -o yaml > ConfigMaps/frontend-index-config.yml
 
 kubectl apply -f ConfigMaps/frontend-index-config.yml
 

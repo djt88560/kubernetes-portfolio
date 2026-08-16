@@ -146,6 +146,162 @@ data:
     (max-width: 600px) {\r\n\r\n.career-container {\r\n\r\npadding-left: 20px;\r\n\r\npadding-right:
     20px;\r\n\r\n}\r\n\r\n.rotation-result {\r\n\r\npadding: 25px;\r\n\r\n}\r\n\r\n.rotation-result-header
     h2 {\r\n\r\nfont-size: 29px;\r\n\r\n}\r\n\r\n}\r\n\r\n</style>\r\n\r\n</body>\r\n\r\n</html>"
+  education.html: "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n<head>\r\n\r\n    <meta
+    charset=\"UTF-8\">\r\n\r\n    <meta\r\n        name=\"viewport\"\r\n        content=\"width=device-width,
+    initial-scale=1.0\"\r\n    >\r\n\r\n    <title>\r\n        Education | Dan Jackson-Thomas\r\n
+    \   </title>\r\n\r\n    <link rel=\"stylesheet\" href=\"styles.css\">\r\n\r\n</head>\r\n\r\n<body>\r\n\r\n
+    \   <!-- =====================================================\r\n    NAVIGATION\r\n
+    \   ===================================================== -->\r\n\r\n    <header
+    class=\"navbar\">\r\n\r\n        <div class=\"navbar-container\">\r\n\r\n            <a
+    href=\"index.html\" class=\"logo\">\r\n                DJT\r\n            </a>\r\n\r\n
+    \           <span class=\"navbar-name\">\r\n                Dan Jackson-Thomas\r\n
+    \           </span>\r\n\r\n            <a href=\"index.html\" class=\"back-button\">\r\n
+    \               ← Back to Portfolio\r\n            </a>\r\n\r\n        </div>\r\n\r\n
+    \   </header>\r\n\r\n    <main>\r\n\r\n        <!-- =====================================================\r\n
+    \       PAGE HEADER\r\n        =====================================================
+    -->\r\n\r\n        <section class=\"page-header\">\r\n\r\n            <div class=\"page-header-content\">\r\n\r\n
+    \               <p class=\"eyebrow\">\r\n                    MY EDUCATION\r\n
+    \               </p>\r\n\r\n                <h1>\r\n                    Academic\r\n
+    \                   <br>\r\n                    <span>Journey</span>\r\n                </h1>\r\n\r\n
+    \               <p>\r\n                    Explore my educational background,
+    academic\r\n                    achievements and the qualifications that have\r\n
+    \                   supported my professional development.\r\n                </p>\r\n\r\n
+    \           </div>\r\n\r\n        </section>\r\n\r\n        <!-- =====================================================\r\n
+    \       EDUCATION\r\n        =====================================================
+    -->\r\n\r\n        <section class=\"career-container\">\r\n\r\n            <div
+    class=\"section-heading\">\r\n\r\n                <p class=\"eyebrow\">\r\n                    EDUCATION\r\n
+    \               </p>\r\n\r\n                <h2>\r\n                    Educational
+    Background\r\n                </h2>\r\n\r\n                <p>\r\n                    A
+    summary of the key stages of my academic journey,\r\n                    from
+    school through to university and beyond.\r\n                </p>\r\n\r\n            </div>\r\n\r\n
+    \           <!-- =====================================================\r\n            EDUCATION
+    CARDS\r\n            ===================================================== -->\r\n\r\n
+    \           <div class=\"rotation-grid\">\r\n\r\n                <div class=\"rotation-card\">\r\n\r\n
+    \                   <div class=\"rotation-number\">\r\n                        01\r\n
+    \                   </div>\r\n\r\n                    <div class=\"rotation-icon\">\r\n
+    \                       \U0001F3EB\r\n                    </div>\r\n\r\n                    <h3>\r\n
+    \                       Secondary School\r\n                    </h3>\r\n\r\n
+    \                   <p>\r\n                        During secondary school I was
+    interested in most subjects. I never felt limited by my options and I didn't dwell\r\n
+    \                       often on what I wanted to do for a career. I enjoyed creative
+    writing, learning about the Russian Revolution and the Cold War\r\n                        in
+    History, and most of Science and Maths. I struggled in biology however and fainted
+    during a lesson about blood!\r\n                        By the end of my GCSEs
+    I had gravitated towards Physics and had a clear interest in the subject.\r\n
+    \                   </p>\r\n\r\n                </div>\r\n\r\n                <div
+    class=\"rotation-card\">\r\n\r\n                    <div class=\"rotation-number\">\r\n
+    \                       02\r\n                    </div>\r\n\r\n                    <div
+    class=\"rotation-icon\">\r\n                        \U0001F4DA\r\n                    </div>\r\n\r\n
+    \                   <h3>\r\n                        Sixth Form\r\n                    </h3>\r\n\r\n
+    \                   <p>\r\n                        I did Maths, Chemistry and
+    Physics in Sixth Form as well as an AS-level in Further Maths. I excelled in theory-based
+    learning but \r\n                        the practical side (especially in Chemistry)
+    came less naturally to me. I overcame this obsatcle with hard work and finished
+    with \r\n                        perfect results.\r\n                    </p>\r\n\r\n
+    \               </div>\r\n\r\n                <div class=\"rotation-card\">\r\n\r\n
+    \                   <div class=\"rotation-number\">\r\n                        03\r\n
+    \                   </div>\r\n\r\n                    <div class=\"rotation-icon\">\r\n
+    \                       \U0001F393\r\n                    </div>\r\n\r\n                    <h3>\r\n
+    \                       University\r\n                    </h3>\r\n\r\n                    <p>\r\n
+    \                       I studied a Master's degree in Physics with Astrophysics
+    at Newcastle University. My learning picked up where I left off in A-Level Physics.\r\n
+    \                       I gained experience with Python and Linux during my computational
+    astrophysics modules. My Master's project was a particular highlight. I worked\r\n
+    \                       with Dr Chris Harrison, Reader in Astrophysics, to study
+    the relationship between black holes and their host galaxies. My work was credited
+    in the following paper\r\n                        href=https://uhra.herts.ac.uk/id/eprint/26616.\r\n
+    \                   </p>\r\n\r\n                </div>\r\n\r\n            </div>\r\n\r\n
+    \           <!-- =====================================================\r\n            EDUCATION
+    DETAILS\r\n            ===================================================== -->\r\n\r\n
+    \           <div class=\"rotation-result\">\r\n\r\n                <div class=\"rotation-result-header\">\r\n\r\n
+    \                   <div>\r\n\r\n                        <p class=\"result-category\">\r\n
+    \                           ACADEMIC PROFILE\r\n                        </p>\r\n\r\n
+    \                       <h2>\r\n                            About My Education\r\n
+    \                       </h2>\r\n\r\n                    </div>\r\n\r\n                    <div
+    class=\"rotation-result-number\">\r\n                        \U0001F393\r\n                    </div>\r\n\r\n
+    \               </div>\r\n\r\n                <div class=\"result-divider\"></div>\r\n\r\n
+    \               <div class=\"rotation-description\">\r\n\r\n                    <h3>\r\n
+    \                       Educational Background\r\n                    </h3>\r\n\r\n
+    \                   <p>\r\n                        Add an overview of your academic
+    journey here.\r\n                        You can describe your schools, college
+    or sixth\r\n                        form experience, university studies, dissertation\r\n
+    \                       projects, specialist subjects and the skills you\r\n                        developed
+    throughout your education.\r\n                    </p>\r\n\r\n                </div>\r\n\r\n
+    \           </div>\r\n\r\n        </section>\r\n\r\n    </main>\r\n\r\n    <footer>\r\n\r\n
+    \       <span>\r\n            © 2026 Dan Jackson-Thomas\r\n        </span>\r\n\r\n
+    \       <span>\r\n            Personal Portfolio\r\n        </span>\r\n\r\n    </footer>\r\n\r\n</body>\r\n\r\n</html>"
+  hobbies.html: "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n<head>\r\n\r\n    <meta
+    charset=\"UTF-8\">\r\n\r\n    <meta\r\n        name=\"viewport\"\r\n        content=\"width=device-width,
+    initial-scale=1.0\"\r\n    >\r\n\r\n    <title>\r\n        Hobbies | Dan Jackson-Thomas\r\n
+    \   </title>\r\n\r\n    <link rel=\"stylesheet\" href=\"styles.css\">\r\n\r\n</head>\r\n\r\n<body>\r\n\r\n
+    \   <!-- =====================================================\r\n    NAVIGATION\r\n
+    \   ===================================================== -->\r\n\r\n    <header
+    class=\"navbar\">\r\n\r\n        <div class=\"navbar-container\">\r\n\r\n            <a
+    href=\"index.html\" class=\"logo\">\r\n                DJT\r\n            </a>\r\n\r\n
+    \           <span class=\"navbar-name\">\r\n                Dan Jackson-Thomas\r\n
+    \           </span>\r\n\r\n            <a href=\"index.html\" class=\"back-button\">\r\n
+    \               ← Back to Portfolio\r\n            </a>\r\n\r\n        </div>\r\n\r\n
+    \   </header>\r\n\r\n    <main>\r\n\r\n        <!-- =====================================================\r\n
+    \       PAGE HEADER\r\n        =====================================================
+    -->\r\n\r\n        <section class=\"page-header\">\r\n\r\n            <div class=\"page-header-content\">\r\n\r\n
+    \               <p class=\"eyebrow\">\r\n                    MY HOBBIES\r\n                </p>\r\n\r\n
+    \               <h1>\r\n                    Interests &\r\n                    <br>\r\n
+    \                   <span>Activities</span>\r\n                </h1>\r\n\r\n                <p>\r\n
+    \                   Learn more about the interests, projects and\r\n                    activities
+    I enjoy outside of work and education.\r\n                </p>\r\n\r\n            </div>\r\n\r\n
+    \       </section>\r\n\r\n        <!-- =====================================================\r\n
+    \       HOBBIES\r\n        =====================================================
+    -->\r\n\r\n        <section class=\"career-container\">\r\n\r\n            <div
+    class=\"section-heading\">\r\n\r\n                <p class=\"eyebrow\">\r\n                    OUTSIDE
+    OF WORK\r\n                </p>\r\n\r\n                <h2>\r\n                    My
+    Hobbies\r\n                </h2>\r\n\r\n                <p>\r\n                    A
+    selection of hobbies and interests that help me\r\n                    develop
+    skills, stay motivated and enjoy my spare\r\n                    time.\r\n                </p>\r\n\r\n
+    \           </div>\r\n\r\n            <div class=\"rotation-grid\">\r\n\r\n                <div
+    class=\"rotation-card\">\r\n\r\n                    <div class=\"rotation-number\">\r\n
+    \                       01\r\n                    </div>\r\n\r\n                    <div
+    class=\"rotation-icon\">\r\n                        \U0001F3D3\r\n                    </div>\r\n\r\n
+    \                   <h3>\r\n                        Table Tennis \r\n                    </h3>\r\n\r\n
+    \                   <p>\r\n                        I have been playing table tennis
+    since summer 2025. I consider myself a keen beginner who learns new skills every
+    time I play.\r\n                    </p>\r\n\r\n                </div>\r\n\r\n
+    \               <div class=\"rotation-card\">\r\n\r\n                    <div
+    class=\"rotation-number\">\r\n                        02\r\n                    </div>\r\n\r\n
+    \                   <div class=\"rotation-icon\">\r\n                        \U0001F4DA\r\n
+    \                   </div>\r\n\r\n                    <h3>\r\n                        Reading\r\n
+    \                   </h3>\r\n\r\n                    <p>\r\n                        I
+    am avid reader. Some of my favourite books include \"The Catcher in the Rye\"
+    by J.D Salinger, \"The Pillars of the Earth\" by Ken Follett\r\n                        and
+    \"Man and Boy\" by Tony Parsons.\r\n                    </p>\r\n\r\n                </div>\r\n\r\n
+    \               <div class=\"rotation-card\">\r\n\r\n                    <div
+    class=\"rotation-number\">\r\n                        03\r\n                    </div>\r\n\r\n
+    \                   <div class=\"rotation-icon\">\r\n                        \U0001F33F\r\n
+    \                   </div>\r\n\r\n                    <h3>\r\n                        Nature
+    and Bushcraft\r\n                    </h3>\r\n\r\n                    <p>\r\n
+    \                       Hailing from Northumberland, I grew up with Hadrian's
+    wall on my doorstep and thousands of acres of woods to explore. During my teenage
+    years\r\n                        I loved spending time In the forest, learning
+    about and foraging for edible plants and fungi and honing my bushcraft skills.\r\n
+    \                   </p>\r\n\r\n                </div>\r\n\r\n            </div>\r\n\r\n
+    \           <div class=\"rotation-result\">\r\n\r\n                <div class=\"rotation-result-header\">\r\n\r\n
+    \                   <div>\r\n\r\n                        <p class=\"result-category\">\r\n
+    \                           PERSONAL INTERESTS\r\n                        </p>\r\n\r\n
+    \                       <h2>\r\n                            About My Hobbies\r\n
+    \                       </h2>\r\n\r\n                    </div>\r\n\r\n                    <div
+    class=\"rotation-result-number\">\r\n                        ⚡\r\n                    </div>\r\n\r\n
+    \               </div>\r\n\r\n                <div class=\"result-divider\"></div>\r\n\r\n
+    \               <div class=\"rotation-description\">\r\n\r\n                    <h3>\r\n
+    \                       About Me Outside Work\r\n                    </h3>\r\n\r\n
+    \                   <p>\r\n                        Add a longer paragraph here
+    describing your\r\n                        interests, how you spend your free
+    time,\r\n                        achievements outside work, volunteer work,\r\n
+    \                       personal projects, sports participation,\r\n                        travelling,
+    photography, gaming, technology\r\n                        projects or anything
+    else you'd like visitors\r\n                        to know about.\r\n                    </p>\r\n\r\n
+    \               </div>\r\n\r\n            </div>\r\n\r\n        </section>\r\n\r\n
+    \   </main>\r\n\r\n    <footer>\r\n\r\n        <span>\r\n            © 2026 Dan
+    Jackson-Thomas\r\n        </span>\r\n\r\n        <span>\r\n            Personal
+    Portfolio\r\n        </span>\r\n\r\n    </footer>\r\n\r\n</body>\r\n\r\n</html>"
   index.html: "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n<head>\r\n<meta charset=\"UTF-8\">\r\n<meta
     name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n\r\n<title>Dan
     Jackson-Thomas | Portfolio</title>\r\n\r\n<link rel=\"stylesheet\" href=\"styles.css\">\r\n</head>\r\n\r\n<body>\r\n\r\n<!--
